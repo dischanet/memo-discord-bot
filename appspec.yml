@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/repos/memo-discord-bot
+hooks:
+  ApplicationStop:
+    - location: hooks/stop.sh
+      timeout: 300
+  AfterInstall:
+    - location: hooks/install.sh
+      timeout: 300
+  ApplicationStart:
+    - location: hooks/start.sh
+      timeout: 3000

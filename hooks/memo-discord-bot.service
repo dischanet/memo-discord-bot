@@ -1,0 +1,14 @@
+[Unit]
+Description=JavaScript Discord Bot Agent
+After=network.target
+
+
+[Service]
+Type=simple
+ExecStart=/home/ec2-user/.nvm/versions/node/v11.5.0/bin/node /home/ec2-user/repos/memo-discord-bot/index.js
+WorkingDirectory=/home/ec2-user/repos/memo-discord-bot
+EnvironmentFile=/home/ec2-user/repos/memo-discord-bot/environment
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,26 @@
+{
+  "name": "memo-discord-bot",
+  "description": "Default template for JavaScript bot",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dischanet/memo-discord-bot.git"
+  },
+  "author": "discha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dischanet/memo-discord-bot/issues"
+  },
+  "homepage": "https://github.com/dischanet/memo-discord-bot#readme",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "process": "^0.11.10"
+  },
+  "devDependencies": {
+    "eslint": "^5.11.0"
+  }
+}

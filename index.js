@@ -5,11 +5,19 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setActivity('!m?|discha.net');
 });
 
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
+let command = require('./files/command.js');
+let prefix = '!m';
+
+client.on('message', message => {
+  if (message.author.bot || !message.guild) return;
+
+  if (message.content.startsWith(prefix)) {
+
+    command.run(client, message, prefix);
+    
   }
 });
 

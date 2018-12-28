@@ -7,7 +7,7 @@ module.exports.set = {
 module.exports.run = (db,client, message) => {
   let embed = {
     'title': 'コマンド一覧',
-    'fileds': [
+    'fields': [
       {
         'name': '!m [タイトル]',
         'value':'メモを表示します',

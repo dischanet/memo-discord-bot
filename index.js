@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const sqlite3 = require('sqlite3').verbose();
-let db = new sqlite3.Database('memo.sqlite');
+let db = new sqlite3.Database('memo.db');
 
 db.run('CREATE TABLE memo(user_id int, name str, title str, content str, INDEX idx_id(user_id));');
 

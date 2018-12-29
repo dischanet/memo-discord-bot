@@ -7,6 +7,7 @@ module.exports.set = {
 module.exports.run = (db,client, message) => {
   let embed = {
     'title': 'コマンド一覧',
+    'color': 0xF5A623,
     'fields': [
       {
         'name': '!m [タイトル]',

@@ -7,20 +7,27 @@
     "type": "git",
     "url": "git+https://github.com/dischanet/memo-discord-bot.git"
   },
-  "author": "discha",
+  "author": "dischanet",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dischanet/memo-discord-bot/issues"
   },
   "homepage": "https://github.com/dischanet/memo-discord-bot#readme",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "lint": "eslint --fix --ext .js .",
+    "precommit": "pretty-quick --staged"
   },
   "dependencies": {
     "discord.js": "^11.4.2",
     "sqlite3": "^4.0.4"
   },
   "devDependencies": {
-    "eslint": "^5.11.0"
+    "eslint": "^5.11.1",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-problems": "^2.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.15.3",
+    "pretty-quick": "^1.8.0"
   }
 }

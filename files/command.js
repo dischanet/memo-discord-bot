@@ -6,6 +6,11 @@ module.exports.run = (client, message, prefix, db) => {
     return;
   }
 
+  if (message.content.startsWith(`${prefix} `)) {
+    show.run(db, client, message);
+    return;
+  }
+
   fs.readdir("files/commands/", (err, files) => {
     files.forEach((file) => {
       const command = require(`./commands/${file}`);

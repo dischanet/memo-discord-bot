@@ -1,8 +1,13 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
+<<<<<<< HEAD
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('memo.db');
+=======
 const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("memo.db");
+>>>>>>> upstream/master
 db.serialize(() => {
   db.run(
     "CREATE TABLE IF NOT EXISTS memo(user_id TEXT, name TEXT, title TEXT, content TEXT);"
@@ -15,8 +20,8 @@ client.on("ready", () => {
   client.user.setActivity("!m?|discha.net");
 });
 
-const command = require("./files/command.js");
-const prefix = "!m";
+const command = require('./files/command.js');
+const prefix = '!m';
 
 client.on("message", (message) => {
   if (message.author.bot || !message.guild) return;

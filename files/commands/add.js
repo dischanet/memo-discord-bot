@@ -5,11 +5,11 @@ module.exports.set = {
 
 //コマンド内容
 module.exports.run = async (db, client, message) => {
-  let msg = await message.channel.send('メモの書き込み確認をしています...');
+  const msg = await message.channel.send('メモの書き込み確認をしています...');
   db.serialize(() => {
 
-    let memo = message.content.split(' ');
-    let memo_title = memo[1];
+    const memo = message.content.split(' ');
+    const memo_title = memo[1];
 
     if (memo.length < 3) {
       msg.edit('正しく入力してください。\nメモを追加するには`!madd [タイトル] [内容]`です。');
@@ -20,7 +20,7 @@ module.exports.run = async (db, client, message) => {
       return;
     }
     memo.splice(0, 2);
-    let memo_content = memo.join(' ');
+    const memo_content = memo.join(' ');
     if (memo_content.length > 1000) {
       msg.edit('内容が長すぎます。\n1000文字以内に変更してください。');
       return;
@@ -38,7 +38,7 @@ module.exports.run = async (db, client, message) => {
         }
         db.run('INSERT INTO memo VALUES(?,?,?,?)', [message.author.id, message.author.username, memo_title, memo_content], (err_ins) => {
           if (!err_ins) {
-            let embed = {
+            const embed = {
               'title': 'メモを追加しました',
               'color': 0x4A90E2,
               'fields': [

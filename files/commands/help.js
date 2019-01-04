@@ -5,7 +5,7 @@ module.exports.set = {
 
 //コマンド内容
 module.exports.run = (db,client, message) => {
-  let embed = {
+  const embed = {
     'title': 'コマンド一覧',
     'color': 0xF5A623,
     'fields': [

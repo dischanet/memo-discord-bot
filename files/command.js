@@ -6,7 +6,7 @@ module.exports.run = (client, message, prefix, db) => {
     files.some((file) => {
 
       const aliases = [];
-      let command = require(`./commands/${file}`);
+      const command = require(`./commands/${file}`);
 
       command.set.aliases.forEach((alias) => aliases.push(alias));
 

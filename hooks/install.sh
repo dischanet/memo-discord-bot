@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /home/ec2-user/repos/memo-discord-bot
+npm install
 
 ZONE=$(curl 169.254.169.254/latest/meta-data/placement/availability-zone)
 REGION=$(echo ${ZONE/%?/})

@@ -3,7 +3,7 @@ module.exports.set = {
   aliases: ["add"], //エイリアス
 };
 
-const insert = (message, memo_title, memo_content, responseMessage) =>
+const insert = (db, message, memo_title, memo_content, responseMessage) =>
   db.run(
     "INSERT INTO memo VALUES(?,?,?,?)",
     [message.author.id, message.author.username, memo_title, memo_content],
@@ -78,7 +78,7 @@ module.exports.run = async (db, client, message) => {
             );
             return;
           }
-          insert(message, memo_title, memo_content, responseMessage);
+          insert(db, message, memo_title, memo_content, responseMessage);
         }
       );
     }

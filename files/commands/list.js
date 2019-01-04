@@ -7,14 +7,24 @@ module.exports.set = {
 module.exports.run = async (db, client, message) => {
   const msg = await message.channel.send('メモを取得しています....');
 
-  let memos = '';
 
   db.all('SELECT * FROM memo WHERE user_id=?;', [message.author.id], (err, rows) => {
-    for (const memo in rows) {
-      memos += `${memo[2]}\n`;
+    let memos = '';
+    for (const memo of rows) {
+      memos += `${memo['title']}\n`;
     }
+    const embed = {
+      'title': 'メモ一覧',
+      'color': 0xF8E71C,
+      'description': memos,
+      'footer': {
+        'icon_url': message.author.avatarURL,
+        'text': message.author.tag,
+      },
+    };
+
+    msg.edit({ embed });
   });
 
-  msg.edit(`めも一覧\n${memos}`);
-
 };
+

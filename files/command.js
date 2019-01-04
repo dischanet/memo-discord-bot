@@ -1,8 +1,12 @@
 const fs = require("fs"); //ファイル操作用モジュール
-
+const show = require("./commands/show.js");
 module.exports.run = (client, message, prefix, db) => {
+  if (message.content.startsWith(`${prefix} `)) {
+    show.run(db, client, message);
+    return;
+  }
+
   fs.readdir("files/commands/", (err, files) => {
-    //コマンドの読み込み
     files.forEach((file) => {
       const command = require(`./commands/${file}`);
 

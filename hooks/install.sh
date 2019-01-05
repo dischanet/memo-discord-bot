@@ -2,10 +2,11 @@
 
 cd /home/ec2-user/repos/memo-discord-bot
 
-PARAMETER_NAME=MEMO_DISCORD_BOT_SECRET
-if [ "$DEPLOYMENT_GROUP_NAME" == "develop" ]
+if [ "$DEPLOYMENT_GROUP_NAME" == "Develop" ]
 then
     PARAMETER_NAME=MEMO_DEVELOP_DISCORD_BOT_SECRET
+else
+    PARAMETER_NAME=MEMO_DISCORD_BOT_SECRET
 fi
 REGION=$(curl -s 169.254.169.254/latest/meta-data/local-hostname | cut -d '.' -f2)
 echo "DISCORD_BOT_TOKEN=$(aws --region ${REGION} ssm get-parameter --name ${PARAMETER_NAME} --query "Parameter.Value" --output text)" > environment

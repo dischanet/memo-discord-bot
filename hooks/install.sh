@@ -6,5 +6,5 @@ REGION=$(curl -s 169.254.169.254/latest/meta-data/local-hostname | cut -d '.' -f
 PARAMETER_NAME=MEMO_DISCORD_BOT_SECRET
 echo "DISCORD_BOT_TOKEN=$(aws --region ${REGION} ssm get-parameter --name ${PARAMETER_NAME} --query "Parameter.Value" --output text)" > environment
 
-sudo cp ./hooks/memo-discord-bot.service /etc/systemd/system/memo-discord-bot.service
-sudo /usr/bin/systemctl enable memo-discord-bot
+cp ./hooks/memo-discord-bot.service /etc/systemd/system/memo-discord-bot.service
+/usr/bin/systemctl enable memo-discord-bot

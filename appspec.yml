@@ -3,13 +3,22 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/repos/memo-discord-bot
+permissions:
+  - object: /
+    owner: ec2-user
+    group: ec2-user
+    mode: 777
+    pattern: "**"
 hooks:
   ApplicationStop:
     - location: hooks/stop.sh
       timeout: 300
+      runas: root
   AfterInstall:
     - location: hooks/install.sh
       timeout: 300
+      runas: root
   ApplicationStart:
     - location: hooks/start.sh
       timeout: 3000
+      runas: root

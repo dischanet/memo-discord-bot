@@ -2,7 +2,7 @@
 
 cd /home/ec2-user/repos/memo-discord-bot
 
-if [ "$DEPLOYMENT_GROUP_NAME" == "Develop" ]
+if [ "$DEPLOYMENT_GROUP_NAME" == "Development" ]
 then
     PARAMETER_NAME=MEMO_DEVELOP_DISCORD_BOT_SECRET
 else

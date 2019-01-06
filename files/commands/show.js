@@ -10,7 +10,7 @@ module.exports.run = async (db, client, message) => {
   const memo = message.content.split(' ');
   const memo_title = memo[1];
 
-  db.get('SELECT * FROM memo WHERE user_id=? AND title=?;', [message.author.id, memo_title], (err, row) => {
+  db.get('SELECT * FROM memo WHERE user_id=? AND memo_title=?;', [message.author.id, memo_title], (err, row) => {
     if (!row) {
       msg.edit(`${memo_title}というタイトルのメモは存在しません。`);
     } else {
@@ -24,7 +24,7 @@ module.exports.run = async (db, client, message) => {
           },
           {
             'name': '内容',
-            'value': row.content,
+            'value': row.memo_content,
           }
         ],
         'footer': {

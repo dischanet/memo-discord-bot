@@ -13,7 +13,7 @@ module.exports.run = async (db, client, message) => {
     responseMessage.edit("正しく入力してください。\n正しくは`!mrm [タイトル]`です。");
     return;
   }
-  db.get("SELECT * FROM memo WHERE user_id=? AND title=?;",
+  db.get("SELECT * FROM memo WHERE user_id=? AND memo_title=?;",
     [message.author.id, memo_title],
     (err, row) => {
       if (err) return;
@@ -21,7 +21,7 @@ module.exports.run = async (db, client, message) => {
         responseMessage.edit(`${memo_title}というタイトルのメモは存在しません`);
         return;
       }
-      db.get("DELETE FROM memo WHERE user_id=? AND title=?",
+      db.get("DELETE FROM memo WHERE user_id=? AND memo_title=?",
         [message.author.id, memo_title],
         (err, row) => {
           if (err) return;

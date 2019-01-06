@@ -68,7 +68,7 @@ module.exports.run = async (db, client, message) => {
       }
 
       db.get(
-        "SELECT * FROM memo WHERE user_id=? AND title=?;",
+        "SELECT * FROM memo WHERE user_id=? AND memo_title=?;",
         [message.author.id, memo_title],
         (err, row) => {
           if (err) return; // TODO

@@ -1,6 +1,6 @@
 module.exports.set = {
   name: "ping", //名前
-  aliases: ["ping"], //エイリアス
+  aliases: ["ping"] //エイリアス
 };
 
 //コマンド内容

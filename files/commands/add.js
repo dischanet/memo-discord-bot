@@ -1,25 +1,25 @@
 module.exports.set = {
   name: "add", //名前
-  aliases: ["add"], //エイリアス
+  aliases: ["add"] //エイリアス
 };
 
 const insert = (db, message, memo_title, memo_content, responseMessage) =>
   db.run(
     "INSERT INTO memo VALUES(?,?,?,?)",
     [message.author.id, message.author.username, memo_title, memo_content],
-    (err) => {
+    err => {
       if (err) return; // TODO
       const embed = {
         title: "メモを追加しました",
         color: 0x4a90e2,
         fields: [
           { name: "タイトル", value: memo_title },
-          { name: "内容", value: memo_content },
+          { name: "内容", value: memo_content }
         ],
         footer: {
           icon_url: message.author.avatarURL,
-          text: message.author.tag,
-        },
+          text: message.author.tag
+        }
       };
       responseMessage.edit({ embed });
     }

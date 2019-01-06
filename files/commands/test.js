@@ -1,6 +1,6 @@
 module.exports.set = {
   name: "test", //名前
-  aliases: ["test"], //エイリアス
+  aliases: ["test"] //エイリアス
 };
 
 //コマンド内容

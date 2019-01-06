@@ -12,7 +12,7 @@ module.exports.run = (client, message, prefix, db) => {
   }
 
   fs.readdir("files/commands/", (err, files) => {
-    files.forEach((file) => {
+    files.forEach(file => {
       const command = require(`./commands/${file}`);
 
       if (

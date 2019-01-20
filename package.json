@@ -1,7 +1,7 @@
 {
   "name": "memo-discord-bot",
   "description": "Default template for JavaScript bot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -20,14 +20,14 @@
   },
   "dependencies": {
     "discord.js": "^11.4.2",
-    "sqlite3": "^4.0.4"
+    "sqlite3": "^4.0.6"
   },
   "devDependencies": {
-    "eslint": "^5.11.1",
-    "eslint-config-prettier": "^3.3.0",
+    "eslint": "^5.12.1",
+    "eslint-config-prettier": "^3.6.0",
     "eslint-config-problems": "^2.0.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.15.3",
-    "pretty-quick": "^1.8.0"
+    "prettier": "^1.16.0",
+    "pretty-quick": "^1.10.0"
   }
 }

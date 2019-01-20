@@ -2,7 +2,7 @@
 
 cd /home/ec2-user/repos/memo-discord-bot
 
-/usr/bin/npm install
+/usr/bin/npm install --production
 
 if [ "$DEPLOYMENT_GROUP_NAME" == "Development" ]
 then

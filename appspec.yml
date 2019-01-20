@@ -9,11 +9,7 @@ permissions:
     group: ec2-user
     mode: 777
     pattern: "**"
-hooks:
-  ApplicationStop:
-    - location: hooks/stop.sh
-      timeout: 300
-      runas: root
+hooks:;
   AfterInstall:
     - location: hooks/install.sh
       timeout: 300

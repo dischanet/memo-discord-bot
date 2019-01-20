@@ -2,6 +2,8 @@
 
 cd /home/ec2-user/repos/memo-discord-bot
 
+/usr/bin/npm install
+
 if [ "$DEPLOYMENT_GROUP_NAME" == "Development" ]
 then
     PARAMETER_NAME=MEMO_DEVELOP_DISCORD_BOT_SECRET

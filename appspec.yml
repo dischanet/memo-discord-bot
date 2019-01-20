@@ -9,7 +9,7 @@ permissions:
     group: ec2-user
     mode: 777
     pattern: "**"
-hooks:;
+hooks:
   AfterInstall:
     - location: hooks/install.sh
       timeout: 6000

@@ -1,7 +1,4 @@
-module.exports.set = {
-  name: "add", //名前
-  aliases: ["add"] //エイリアス
-};
+module.exports.alias = ["add"];
 
 const insert = (db, message, memo_title, memo_content, responseMessage) =>
   db.run(

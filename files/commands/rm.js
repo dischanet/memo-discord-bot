@@ -1,8 +1,5 @@
 module.exports.set = {
-  name: "rm", //名前
-  aliases: ["rm"] //エイリアス
-};
-
+module.exports.alias = ["remove","rm"];
 //コマンド内容
 module.exports.run = async (db, client, message) => {
   const responseMessage = await message.channel.send(

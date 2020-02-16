@@ -1,4 +1,7 @@
-module.exports.alias = ["ping"];
+module.exports.set = {
+  name: "ping", //名前
+  aliases: ["ping"] //エイリアス
+};
 
 //コマンド内容
 module.exports.run = (db, client, message) => {

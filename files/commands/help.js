@@ -1,4 +1,7 @@
-module.exports.alias = ["?","help"];
+module.exports.set = {
+  name: "help", //名前
+  aliases: ["?", "help"] //エイリアス
+};
 
 //コマンド内容
 module.exports.run = (db, client, message) => {

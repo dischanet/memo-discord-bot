@@ -1,4 +1,7 @@
-module.exports.alias = ["show"];//!m
+module.exports.set = {
+  name: "show", //名前
+  aliases: ["show"] //エイリアス
+};
 
 //コマンド内容
 module.exports.run = async (db, client, message) => {

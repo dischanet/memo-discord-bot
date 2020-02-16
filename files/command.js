@@ -1,9 +1,5 @@
-const fs = require("fs"); 
-
-const commands = require("./import.js");
-
+const fs = require("fs"); //ファイル操作用モジュール
 const show = require("./commands/show.js");
-
 module.exports.run = (client, message, prefix, db) => {
   if (message.content.startsWith(`${prefix} `)) {
     show.run(db, client, message);
@@ -15,12 +11,17 @@ module.exports.run = (client, message, prefix, db) => {
     return;
   }
 
-  const cmd_message = message.content.slice(data.prefix.length).split(" ")[0];
+  fs.readdir("files/commands/", (err, files) => {
+    files.forEach(file => {
+      const command = require(`./commands/${file}`);
 
-  const command = commands[cmd_message];
-
-  if (command){
-    command.run(db, client, message);
-  }
-  
+      if (
+        command.set.aliases.includes(
+          message.content.slice(prefix.length).split(" ")[0]
+        )
+      ) {
+        command.run(db, client, message);
+      }
+    });
+  });
 };
